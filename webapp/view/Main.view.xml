@@ -1,0 +1,64 @@
+<mvc:View controllerName="at.clouddna.zsapui5withodatav2.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:smartTable="sap.ui.comp.smarttable"
+xmlns:html="http://www.w3.org/1999/xhtml"
+xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <smartFilterBar:SmartFilterBar id="main_smartfilterbar" entitySet="ZRAP_CV_BOOKS" persistencyKey="SmartFilter_Explored">
+                <smartFilterBar:layoutData>
+                    <FlexItemData shrinkFactor="0" />
+                </smartFilterBar:layoutData>
+            </smartFilterBar:SmartFilterBar>
+            <smartTable:SmartTable id="main_smarttable" smartFilterId=" main_smartfilterbar " entitySet="ZRAP_CV_BOOKS"
+                tableType="ResponsiveTable" useVariantManagement="true" useTablePersonalisation="true" header="Books"
+                showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true"
+                class="sapUiResponsiveContentPadding" enableAutoColumnWidth="false" app:useSmartToggle="true">
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="1" baseSize="0%" />
+                </smartTable:layoutData>
+                <smartTable:customToolbar>
+                        <Toolbar id="main_table_toolbar">
+                            <ToolbarSpacer/>
+                            <Button id="main_table_createbutton" text="Hinzufügen" press="onCreatePressed" />
+                        </Toolbar>
+                </smartTable:customToolbar>
+                <Table>
+                    <items>
+                        <ColumnListItem type="Navigation" press="onNavToDetail"/>
+                    </items>
+                </Table>
+            </smartTable:SmartTable>
+
+            <!--
+            <Table id="booksTable" headerText="{i18n>main.table.title}" items="{/ZRAP_CV_BOOKS}" alternateRowColors="true" growing="true" growingThreshold="200" growingScrollToLoad="true">
+                <columns>
+                    <Column id="isbnColumn">
+                        <Text id="isbnTitle" text="{i18n>main.column.isbn}"/>
+                    </Column>
+                    <Column id="titleColumn" demandPopin="true" minScreenWidth="Tablet">
+                        <Text id="titleTitle" text="{i18n>main.column.title}"/>
+                    </Column>
+                    <Column id="authorColumn" demandPopin="true" minScreenWidth="Tablet">
+                        <Text id="authorTitle" text="{i18n>main.column.author}"/>
+                    </Column>
+                    <Column id="ratingColumn" minScreenWidth="Desktop">
+                        <Text id="ratingTitle" text="{i18n>main.column.rating}"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="templateItem" highlight="{= ${ReadingFinished} ? 'Success' : 'None' }">
+                        <cells>
+                            <ObjectIdentifier id="isbnCell" title="{ISBN}" />
+                            <Text id="titleCell" text="{Title}"/>
+                            <Text id="authorCell" text="{Author}"/>
+                            <RatingIndicator id="ratingCell" value="{Rating}" editable="false"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            -->
+        </content>
+    </Page>
+</mvc:View>

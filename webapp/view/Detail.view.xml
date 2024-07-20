@@ -1,0 +1,92 @@
+<mvc:View
+    controllerName="at.clouddna.zsapui5withodatav2.controller.Detail"
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{Title}"
+    >
+
+        <customHeader>
+            <OverflowToolbar id="detail_toolbar_header">
+                <Title id="detail_title_header" text="Details" />
+                <ToolbarSpacer id="detail_spacer_header" />
+                <Button id="detail_button_edit" text="Bearbeiten" type="Emphasized" press="onEditPressed" visible="{= ${Update_mc} &amp;&amp; !${editModel>/editMode}}"/>
+            </OverflowToolbar>
+        </customHeader>
+        <content>
+        <!--<core:Fragment id="detail_fragment_display" type="XML" fragmentName="at.clouddna.zsapui5withodatav2.view.fragment.Display"/>-->
+        <!--<core:Fragment id="detail_fragment_edit" type="XML" fragmentName="at.clouddna.zsapui5withodatav2.view.fragment.Edit"/>-->
+            <!--
+            <smartForm:SmartForm id="detail_smartform">
+    <smartForm:Group id="detail_group">
+        <smartForm:GroupElement id="detail_element_isbn" label="{/#ZRAP_CV_BOOKSType/ISBN/@sap:label}">
+            <smartField:SmartField id="detail_field_isbn" value="{ISBN}" />
+        </smartForm:GroupElement>
+        <smartForm:GroupElement id="detail_element_title" label="{/#ZRAP_CV_BOOKSType/Title/@sap:label}">
+            <smartField:SmartField id="detail_field_title" value="{Title}" />
+        </smartForm:GroupElement>
+        <smartForm:GroupElement id="detail_element_desc" label="{/#ZRAP_CV_BOOKSType/Description/@sap:label}">
+            <smartField:SmartField id="detail_field_desc" value="{Description}" />
+        </smartForm:GroupElement>
+        <smartForm:GroupElement id="detail_element_genre" label="{/#ZRAP_CV_BOOKSType/Genre/@sap:label}">
+            <smartField:SmartField id="detail_field_genre" value="{Genre}" />
+        </smartForm:GroupElement>
+        <smartForm:GroupElement id="detail_element_author" label="{/#ZRAP_CV_BOOKSType/Author/@sap:label}">
+            <smartField:SmartField id="detail_field_author" value="{Author}" />
+        </smartForm:GroupElement>
+        <smartForm:GroupElement id="detail_element_pages" label="{/#ZRAP_CV_BOOKSType/BookPages/@sap:label}">
+            <smartField:SmartField id="detail_field_pages" value="{BookPages}" />
+        </smartForm:GroupElement>
+        <smartForm:GroupElement id="detail_element_rating" label="{i18n>detail.rating}">
+            <smartField:SmartField id="detail_field_rating" value="{Rating}" />
+        </smartForm:GroupElement>
+        <smartForm:GroupElement id="detail_element_finished" label="{/#ZRAP_CV_BOOKSType/ReadingFinished/@sap:label}">
+            <smartField:SmartField id="detail_field_finished" value="{ReadingFinished}" />
+        </smartForm:GroupElement>
+    </smartForm:Group>
+</smartForm:SmartForm>-->
+
+            <!--
+            <f:SimpleForm id="detail_simpleform" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
+    labelSpanM="3" labelSpanS="12" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+    columnsL="1" columnsM="1">
+    <f:content>
+        <Label id="detail_label_isbn" text="{/#ZRAP_CV_BOOKSType/ISBN/@sap:label}" />
+<Text id="detail_text_isbn" text="{ISBN}" />
+<Label id="detail_label_title" text="{/#ZRAP_CV_BOOKSType/Title/@sap:label}" />
+<Text id="detail_text_title" text="{Title}" />
+<Label id="detail_label_desc" text="{/#ZRAP_CV_BOOKSType/Description/@sap:label}" />
+<Text id="detail_text_desc" text="{Description}" />
+<Label id="detail_label_genre" text="{/#ZRAP_CV_BOOKSType/Genre/@sap:label}" />
+<Text id="detail_text_genre" text="{Genre}" />
+<Label id="detail_label_author" text="{/#ZRAP_CV_BOOKSType/Author/@sap:label}" />
+<Text id="detail_text_author" text="{Author}" />
+<Label id="detail_label_pages" text="{/#ZRAP_CV_BOOKSType/BookPages/@sap:label}" />
+<Text id="detail_text_pages" text="{BookPages}" />
+<Label id="detail_label_rating" text="{i18n>detail.rating}" />
+<RatingIndicator id="detail_text_rating" value="{Rating}" editable="false" />
+<Label id="detail_label_finished" text="{/#ZRAP_CV_BOOKSType/ReadingFinished/@sap:label}" />
+<CheckBox id="detail_text_finished" selected="{ReadingFinished}" editable="false" />
+
+    </f:content>
+</f:SimpleForm>
+ -->
+        </content>
+        <footer>
+            <OverflowToolbar id="detail_toolbar_footer" >
+                <ToolbarSpacer id="detail_spacer_footer" />
+                <Button id="detail_button_save" text="Speichern" press="onSavePressed" type="Accept" visible="{editModel>/editMode}"/>
+<Button id="detail_button_cancel" text="Abbrechen" press="onCancelPressed" type="Reject" visible="{editModel>/editMode}"/>
+
+            </OverflowToolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

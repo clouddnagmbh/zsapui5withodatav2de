@@ -1,0 +1,28 @@
+<core:FragmentDefinition  xmlns:f="sap.ui.layout.form" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <f:SimpleForm id="detail_simpleform" editable="true" layout="ResponsiveGridLayout"
+                labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" emptySpanXL="4" emptySpanL="4"
+                emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" >
+                <f:content>
+                    <Label id="detail_label_isbn" text="{/#ZRAP_CV_BOOKSType/ISBN/@sap:label}" />
+                    <Input id="detail_input_isbn" value="{ISBN}"/>
+                    <Label id="detail_label_title" text="{/#ZRAP_CV_BOOKSType/Title/@sap:label}" />
+                    <Input id="detail_input_title" value="{Title}"/>
+                    <Label id="detail_label_desc" text="{/#ZRAP_CV_BOOKSType/Description/@sap:label}" />
+                    <Input id="detail_input_desc" value="{Description}"/>
+                    <Label id="detail_label_genre" text="{/#ZRAP_CV_BOOKSType/Genre/@sap:label}" />
+                    <ComboBox id="detail_input_genre" selectedKey="{Genre}">    
+                        <core:Item id="detail_genre1" key="Information" text="Information"/>
+                        <core:Item id="detail_genre2" key="Action" text="Action"/>
+                        <core:Item id="detail_genre3" key="Comic" text="Comic"/>
+                    </ComboBox>
+                    <Label id="detail_label_author" text="{/#ZRAP_CV_BOOKSType/Author/@sap:label}" />
+                    <Input id="detail_input_author" value="{Author}"/>
+                    <Label id="detail_label_pages" text="{/#ZRAP_CV_BOOKSType/BookPages/@sap:label}" />
+                    <Input id="detail_input_pages" value="{ path: 'BookPages', type: 'sap.ui.model.type.Integer'}"/>
+                    <Label id="detail_label_rating" text="{i18n>detail.rating}" />
+                    <RatingIndicator id="detail_input_rating" value="{Rating}"/>
+                    <Label id="detail_label_finished" text="{/#ZRAP_CV_BOOKSType/ReadingFinished/@sap:label}" />
+                    <CheckBox id="detail_input_finished" selected="{ReadingFinished}"/>
+                </f:content>
+            </f:SimpleForm>
+</core:FragmentDefinition>
